@@ -1,0 +1,65 @@
+snippet ccom "Class React Component" bA
+import React from 'react';
+
+class $1 extends React.Component {
+	render() {
+		return (
+			<${2:div}>
+				$0
+			</$2>
+		);
+	}
+}
+
+export default $1;
+endsnippet
+
+snippet reim "React import" bA
+import React from 'react';$0
+endsnippet
+
+snippet nimp "Import" bA
+import $1 from '$2';$0
+endsnippet
+
+snippet rred "Reducer definition" bA
+export default (state = $1, action = {}) => {
+	switch(action.type) {
+		default: return state;
+	}
+}$0
+endsnippet
+
+snippet rconst "Redux Action Type Constant" bA
+export const ${1:CONSTANT_NAME} = '$1';$0
+endsnippet
+
+snippet pt "React Prop Types" w
+React.PropTypes.$0
+endsnippet
+
+snippet eb "Bind function to this in constructor" w
+this.$1 = this.$1.bind(this);$0
+endsnippet
+
+snippet eroute "Express Route" bA
+import express from 'express';
+
+let router = express.Router();
+
+$0
+
+export default router;
+endsnippet
+
+snippet ssee "Seed Template" bA
+exports.seed = function(knex, Promise) {
+	const tableName = '$1';
+
+	const items = [
+		$0
+	];
+
+	knex(tableName).del().insert(items).into(tableName);
+};
+endsnippet
