@@ -1,4 +1,4 @@
-" Based from https://github.com/Remchi/dotfiles
+" Forked from https://github.com/Remchi/dotfiles
 "                      VUNDLE
 " =============================================================
 
@@ -195,6 +195,7 @@ cnoremap %% <C-R>=expand("%:p:h") . "/" <CR>
 
 " Command-T
 nnoremap \f :CommandT<cr>
+nnoremap \r :CommandTFlush<cr>
 nnoremap <leader>. :CommandTBuffer<cr>
 
 nnoremap <leader>z :Gstatus<CR><C-w>20+
@@ -203,6 +204,8 @@ nnoremap <leader>1 1gt<cr>
 nnoremap <leader>2 2gt<cr>
 nnoremap <leader>3 3gt<cr>
 nnoremap <leader>4 4gt<cr>
+
+let g:CommandTWildIgnore=&wildignore . ",*/node_modules"
 
 " Rails plugin navigation
 " nnoremap <leader>gc :Econtroller
@@ -355,3 +358,4 @@ let @y=':%s/“/"/g'
 let @u=':%s/”/"/g'
 let @l=':%s/’/''/g'
 let @j=':%s/—/-/g'
+
