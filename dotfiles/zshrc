@@ -85,15 +85,6 @@ alias acl=arcclose
 alias amd="arc amend"
 alias diff="arc diff"
 
-# Goto project
-# Customize to your needs
-alias bitbit-api="cd ~/Repos/bitbit-api"
-alias bitbit-web="cd ~/Repos/bitbit-webapp"
-
-# Web Requirements
-webrequirements() { php ~/.cnfgx/devsetup/devsetupreq.php; }
-alias webreq=webrequirements
-
 # Mysql
 alias sql="mysql.server start"
 alias sqlog="mysql -u root -p"
@@ -107,21 +98,6 @@ openprogs() {
   open -a Telegram;
 }
 alias abri=openprogs
-
-# Close programs
-exitnow() {
-  killall Google\ Chrome PhpStorm Slack SourceTree Sequel\ Pro Slack;
-}
-alias sirado=exitnow
-
-# Relax mode programs
-relaxmode() {
-  open "https://youtube.com";
-  open "https://9gag.com";
-  open "https://news.ycombinator.com";
-  open "https://gmail.com";
-}
-alias relax=relaxmode
 
 # Testing in yii
 yisingletest() {
@@ -177,6 +153,7 @@ MAGENTA=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 NORMAL=$(tput sgr0)
 
+
 helpusall() {
   printf "\n";
   printf "d888888P  .d888888  888888ba   .d888888  888888ba   .88888.  \n"
@@ -195,9 +172,6 @@ helpusall() {
   printf "${BLUE}  gitr [branch]\t\t\t${NORMAL}git rebase origin/<branch>\n";
   printf "${BLUE}  gitp [branch]\t\t\t${NORMAL}git push origin/<branch>\n";
   printf "\n${GREEN}Yii related web development:\n";
-  printf "${BLUE}  gd [repo name]\t\t${NORMAL}execute grunt dev sa <repo name>\n";
-  printf "${BLUE}  msetup\t\t\t${NORMAL}sudo make setup\n";
-  printf "${BLUE}  yiroot\t\t\t${NORMAL}balik sa root kung naa ka sa workspace\n";
   printf "${BLUE}  ystest [directory]\t\t${NORMAL}single unit test sa yii\n";
   printf "${BLUE}  taskdmn\t\t\t${NORMAL}sugdan ang task daemon\n";
   printf "${BLUE}  taildmn\t\t\t${NORMAL}i-tail ang task daemon\n";
@@ -205,15 +179,11 @@ helpusall() {
   printf "${BLUE}  amd\t\t\t\t${NORMAL}arc amend\n";
   printf "${BLUE}  diff\t\t\t\t${NORMAL}arc diff\n";
   printf "${BLUE}  acl [revision]\t\t${NORMAL}arc close-revision <revision>\n";
-  printf "\n${GREEN}Para sa Laravel:\n";
-  printf "${BLUE}  artisan [param] [param]\t${NORMAL}php artisan sa laravel project\n";
   printf "\n${GREEN}MySQL:\n";
   printf "${BLUE}  sql\t\t\t\t${NORMAL}start mysql\n";
   printf "${BLUE}  sqlog\t\t\t\t${NORMAL}login to mysql\n";
   printf "\n${GREEN}Auto apps na pre:\n";
   printf "${BLUE}  abri\t\t\t\t${NORMAL}abrihan mga kinahanglan nga apps, diretso na\n";
-  printf "${BLUE}  sirado\t\t\t${NORMAL}sirad'an eh\n";
-  printf "${BLUE}  relax\t\t\t\t${NORMAL}abri ug nendot nga websites\n";
   printf "\n${GREEN}Bash profile:\n";
   printf "${BLUE}  ebash\t\t\t\t${NORMAL}edit .bash_profile\n";
   printf "${BLUE}  sbash\t\t\t\t${NORMAL}save changes sa .bash_profile\n";
@@ -229,6 +199,3 @@ newupdate() {
   printf "\nType lang ug ${RED}tabang${NORMAL} kung naka limot naka! Type ${RED}bag-o${NORMAL} sa mga nadungag sa version 1.7!\n\n";
 }
 alias bag-o=newupdate
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
