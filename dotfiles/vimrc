@@ -243,7 +243,7 @@ vmap s <Plug>(easymotion-bd-t)
 " Airline
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme='papercolor'
+let g:airline_theme='PaperColor'
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
@@ -273,7 +273,7 @@ let g:javascript_plugin_jsdoc = 1
 "                      APPEARENCE
 " =============================================================
 
-"set term=xterm
+set term=xterm
 set t_Co=256
 let &t_AB="\e[48;5;%dm"
 let &t_AF="\e[38;5;%dm"
@@ -287,7 +287,7 @@ colorscheme atom-dark
 set background=dark
 
 if has("gui_running")
-  set guifont=Source\ Code\ Pro\ for\ Powerline:h16
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h11
   set linespace=2
   set guioptions-=r
 endif
@@ -358,4 +358,5 @@ let @y=':%s/“/"/g'
 let @u=':%s/”/"/g'
 let @l=':%s/’/''/g'
 let @j=':%s/—/-/g'
+
 

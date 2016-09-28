@@ -43,7 +43,7 @@ export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/Users/jeetkunedo/Repos/arcanist/bin:$PATH
 export PATH=/Users/jeetkunedo/.composer/vendor/bin:$PATH
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
+export PATH="/Library/Python/2.7/site-packages:${PATH}"
 
 # Virtualenv/VirtualenvWrapper
 # source /usr/local/bin/virtualenvwrapper.sh
