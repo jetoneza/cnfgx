@@ -1,4 +1,4 @@
-# Development Environment Setup for OSX
+# Development Environment Setup: nginx, mysql, php, node
 
 ### Step 1
 Install homebrew.
