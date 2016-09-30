@@ -2,16 +2,29 @@
 This is based from [Remchi/dotfiles](https://github.com/Remchi/dotfiles).
 
 ## Installation
-* create symbolic links to config files
+
+Clone repository.
 
 ```
-ln -s .cnfgx/dotfiles/vimrc .vimrc
-ln -s .cnfgx/dotfiles/zshrc .zshrc
-ln -s .cnfgx/dotfiles/vim .vim
+cd ~
+git clone git@github.com:jetoneza/cnfgx.git .dotfiles
+cd .dotfiles
+git filter-branch --prune-empty --subdirectory-filter dotfiles/ HEAD
 ```
 
-* install [Vundle](https://github.com/VundleVim/Vundle.vim) and install plugins.
+### Vim Setup 
 
-## Vim fonts
+Create symbolic links to config files.
+
+```
+ln -s .dotfiles/vim .vim
+ln -s .dotfiles/vimrc .vimrc
+```
+
+#### Plugins
+
+Install [Vundle](https://github.com/VundleVim/Vundle.vim) and install plugins.
+
+#### Fonts
 
 To enable airline fonts, install [Powerline Fonts](https://github.com/powerline/fonts).
