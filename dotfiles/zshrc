@@ -99,6 +99,24 @@ openprogs() {
 }
 alias abri=openprogs
 
+# Read reddits
+readreddits() {
+  open "https://www.reddit.com/r/programming";
+  open "https://www.reddit.com/r/business";
+  open "https://www.reddit.com/r/battlestations";
+  open "https://www.reddit.com/r/pcmasterrace";
+  open "https://www.reddit.com/r/history";
+  open "https://www.reddit.com/r/diy";
+  open "https://www.reddit.com/r/shittydiy";
+  open "https://www.reddit.com/r/mechanical_gifs";
+  open "https://www.reddit.com/r/techsupportgore";
+  open "https://www.reddit.com/r/infrastructureporn";
+  open "https://www.reddit.com/r/oddlysatisfying";
+  open "https://www.reddit.com/r/PerfectTiming";
+  open "https://www.reddit.com/r/Simulated";
+}
+alias rredit=readreddits
+
 # Testing in yii
 yisingletest() {
   cd workspace/tests/phpunit; sudo ../../vendor/bin/phpunit unit/Sakanade/$1;
@@ -184,6 +202,7 @@ helpusall() {
   printf "${BLUE}  sqlog\t\t\t\t${NORMAL}login to mysql\n";
   printf "\n${GREEN}Auto apps na pre:\n";
   printf "${BLUE}  abri\t\t\t\t${NORMAL}abrihan mga kinahanglan nga apps, diretso na\n";
+  printf "${BLUE}  rredit\t\t\t${NORMAL}abrihan mga sub reddits\n";
   printf "\n${GREEN}Bash profile:\n";
   printf "${BLUE}  ebash\t\t\t\t${NORMAL}edit .bash_profile\n";
   printf "${BLUE}  sbash\t\t\t\t${NORMAL}save changes sa .bash_profile\n";
