@@ -4,7 +4,8 @@
 Install ubuntu
 * [Ubuntu installation](https://github.com/jetoneza/cnfgx/blob/master/devops/ububtu-installation.md)
   * [Video](https://www.youtube.com/watch?v=8YZDtfLzjS4)
-* [Setting static ip](https://www.youtube.com/watch?v=cD_OkhN16rU)
+* [Setting static ip](https://github.com/jetoneza/cnfgx/blob/master/devops/basic-network-config.md)
+  * [Video](https://www.youtube.com/watch?v=cD_OkhN16rU)
 
 ## SSH Setup
 Step 1: SSH with password.
