@@ -15,21 +15,17 @@ Plugin 'tpope/vim-ragtag'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'tpope/vim-abolish'
-Plugin 'vim-ruby/vim-ruby'
 Plugin 'mattn/emmet-vim'
 
 Plugin 'rbgrouleff/bclose.vim'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'Lokaltog/vim-easymotion'
 
 Plugin 'SirVer/ultisnips'
-Plugin 'janko-m/vim-test'
 
-Plugin 'kchmck/vim-coffee-script'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mustache/vim-mustache-handlebars'
 
@@ -38,9 +34,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'machakann/vim-textobj-delimited'
-Plugin 'rizzatti/dash.vim'
 Plugin 'gorkunov/smartpairs.vim'
-Plugin 'nikvdp/ejs-syntax'
 
 " Test Run
 Plugin 'terryma/vim-expand-region'
@@ -48,7 +42,6 @@ Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'mxw/vim-jsx'
 Plugin 'kana/vim-textobj-user'
-Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-vinegar'
 
@@ -60,6 +53,7 @@ Plugin 'gosukiwi/vim-atom-dark'
 Plugin 'GertjanReynaert/cobalt2-vim-theme'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'https://github.com/gorodinskiy/vim-coloresque.git'
+Plugin 'itchyny/lightline.vim'
 
 Plugin 'wincent/command-t'
 Plugin 'Valloric/YouCompleteMe'
@@ -207,15 +201,6 @@ nnoremap <leader>4 4gt<cr>
 
 let g:CommandTWildIgnore=&wildignore . ",*/node_modules"
 
-" Rails plugin navigation
-" nnoremap <leader>gc :Econtroller
-" nnoremap <leader>gm :Emodel
-" nnoremap <leader>gv :Eview
-" nnoremap <leader>gr :Espec
-" nnoremap <leader>gj :Ejavascript
-" nnoremap <leader>gs :Eservice
-" nnoremap <leader>gi :Einitializer
-
 " inc search for range commands
 cnoremap $t <CR>:t''<CR>
 cnoremap $T <CR>:T''<CR>
@@ -243,7 +228,7 @@ vmap s <Plug>(easymotion-bd-t)
 " Airline
 let g:airline#extensions#tabline#enabled = 0
 let g:airline_powerline_fonts = 1
-let g:airline_theme='PaperColor'
+let g:airline_theme='papercolor'
 
 " Markdown
 let g:vim_markdown_folding_disabled=1
@@ -252,13 +237,6 @@ let g:vim_markdown_fenced_languages = ['html', 'js=javascript', 'ruby']
 " CtrlP
 let g:ctrlp_working_path_mode='a'
 set wildignore+=**/bower_components/*,**/node_modules/*,**/tmp/*,**/assets/images/*,**/assets/fonts/*,**/public/images/*
-
-" vim-test
-nmap <silent> <leader>t :TestNearest<CR>
-nmap <silent> <leader>T :TestFile<CR>
-nmap <silent> <leader>a :TestSuite<CR>
-nmap <silent> <leader>l :TestLast<CR>
-" let g:test#rspec#executable = 'bin/rspec'
 
 " JSX
 let g:jsx_ext_required = 0
@@ -296,17 +274,7 @@ endif
 "                      PROJECTIONS
 " =============================================================
 
-let g:rails_projections = {
-      \ "app/services/*.rb": {
-      \   "command": "service",
-      \   "template":
-      \     ["class %S", "end"],
-      \   "test": [
-      \     "test/unit/%s_uploader_test.rb",
-      \     "spec/services/%s_spec.rb"
-      \   ],
-      \   "keywords": "process version"
-      \ }}
+" Add projections here...
 
 " =============================================================
 "                      CUSTOM FUNCTIONS
@@ -359,4 +327,7 @@ let @u=':%s/”/"/g'
 let @l=':%s/’/''/g'
 let @j=':%s/—/-/g'
 
+" Control P - for finding files in vim
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
