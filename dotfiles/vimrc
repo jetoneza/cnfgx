@@ -58,6 +58,9 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'wincent/command-t'
 Plugin 'Valloric/YouCompleteMe'
 
+" Linters
+Plugin 'w0rp/ale'
+
 call vundle#end()
 filetype plugin indent on
 syntax on

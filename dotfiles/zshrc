@@ -45,6 +45,9 @@ export PATH=/Users/jeetkunedo/Repos/arcanist/bin:$PATH
 export PATH=/Users/jeetkunedo/.composer/vendor/bin:$PATH
 export PATH="/Library/Python/2.7/site-packages:${PATH}"
 
+# Flutter path
+# export PATH="$PATH:/Users/jeetkunedo/Workspace/development/flutter/bin"
+
 # Virtualenv/VirtualenvWrapper
 # source /usr/local/bin/virtualenvwrapper.sh
 
@@ -172,6 +175,40 @@ MAGENTA=$(tput setaf 5)
 CYAN=$(tput setaf 6)
 NORMAL=$(tput sgr0)
 
+# Porch Deploy
+or-servers() {
+  echo "${GREEN}List:${NORMAL}"
+  echo "- porch-preprod-01"
+  echo "- porch-beta-sg"
+  echo "- foyer-preprod-01"
+  echo "- foyer-beta-sg"
+}
+
+or-deploy() {
+  echo "!ansible deploy-${1}.yml -l $2 -e \"branch=$3\"" | pbcopy
+  echo "${RED}Command: ${BLUE}!ansible deploy-${1}.yml -l ${GREEN}$2${BLUE} -e \"branch=${YELLOW}$3${BLUE}\""
+
+  echo "\n${GREEN}Copied to clipboard!${NORMAL}"
+}
+
+or-deploy-preprod() {
+  echo "!ansible deploy-${1}.yml -l ${1}-preprod-01 -e \"${1}_branch=$2\"" | pbcopy
+  echo "${RED}Command: ${BLUE}!ansible deploy-${1}.yml -l ${GREEN}${1}-preprod-01${BLUE} -e \"${1}_branch=${YELLOW}$2${BLUE}\""
+
+  echo "\n${GREEN}Copied to clipboard!${NORMAL}"
+}
+
+or-deploy-beta() {
+  echo "!ansible deploy-mainstack.yml -l mainstack-beta -e \"porch_branch=${1} foyer_branch=${2} app_port=${3}\"" | pbcopy
+  echo "${RED}Command: ${BLUE}!ansible deploy-mainstack.yml -l mainstack-beta -e \"porch_branch=${GREEN}${1}${BLUE} foyer_branch=${YELLOW}${2}${BLUE} app_port=${MAGENTA}${3}${BLUE}\""
+
+  echo "\n${GREEN}Copied to clipboard!${NORMAL}"
+}
+
+killport() {
+  echo "${GREEN}sudo lsof -i tcp:${1}${NORMAL}"
+  echo "${RED}kill -9 PID ${NORMAL}"
+}
 
 helpusall() {
   printf "\n";
@@ -219,3 +256,13 @@ newupdate() {
   printf "\nType lang ug ${RED}tabang${NORMAL} kung naka limot naka! Type ${RED}bag-o${NORMAL} sa mga nadungag sa version 1.7!\n\n";
 }
 alias bag-o=newupdate
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/jeetkunedo/Downloads/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/jeetkunedo/Downloads/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/jeetkunedo/Downloads/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/jeetkunedo/Downloads/google-cloud-sdk/completion.zsh.inc'; fi
